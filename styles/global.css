@@ -1,0 +1,31 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.swiper-slide {
+  width: fit-content !important;
+}
+
+@media (max-width: 640px) {
+  .swiper-wrapper {
+    height: 300px !important;
+  }
+
+  .swiper-slide:nth-child(1) {
+    max-width: 80vw;
+  }
+
+  .swiper-slide img {
+    height: 100%;
+    width: auto !important;
+  }
+}
+
+header.darkheader svg {
+  fill: white;
+}

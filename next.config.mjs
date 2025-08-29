@@ -28,7 +28,8 @@ const config = {
       },
     ]
   },
-  images: {
+   images: {
+    unoptimized: true,  
     remotePatterns: [
       { hostname: 'cdn.sanity.io' },
       { hostname: 'source.unsplash.com' },

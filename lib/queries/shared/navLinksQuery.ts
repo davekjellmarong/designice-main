@@ -1,3 +1,4 @@
+// lib/queries/shared/navLinksQuery.ts
 import { groq } from 'next-sanity'
 
 export const navLinksQuery = groq`
@@ -6,20 +7,16 @@ export const navLinksQuery = groq`
   _type,
   isButton,
   (_type == 'linkGroup') => {
-    ...reference-> {
-      "slug": slug.current
-    },
+    ...reference-> { "slug": slug.current },
     links[] {
       (_type == 'linkInternal') => {
         title,
-        ...reference-> {
-          "slug": slug.current
-        },
+        ...reference-> { "slug": slug.current },
         styles,
         _type,
         _key
-    },
-    (_type == 'linkExternal') => {
+      },
+      (_type == 'linkExternal') => {
         newWindow,
         title,
         url,
@@ -30,13 +27,12 @@ export const navLinksQuery = groq`
     }
   },
   (_type == 'linkInternal') => {
-    ...reference-> {
-      "slug": slug.current
-    },
+    ...reference-> { "slug": slug.current },
     styles
   },
   (_type == 'linkExternal') => {
     newWindow,
+    title,   
     url,
     styles
   },

@@ -24,6 +24,13 @@ export default {
       validation: (Rule) =>
         Rule.required().uri({ scheme: ['http', 'https', 'mailto', 'tel'] }),
     },
+    // Open in new window
+    {
+      title: 'Open in new window',
+      name: 'newWindow',
+      type: 'boolean',
+      description: 'Recommended for external links',
+    },
   ],
   preview: {
     select: {

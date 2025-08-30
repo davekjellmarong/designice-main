@@ -38,11 +38,11 @@ export default function ProjectNormalView({
                             <MdOutlineArrowForward className="ml-2 text-xl" />
                           </Link>
                         )}
-                        {!isLatestProject && project && project.categories && project.categories?.map((category: iCategory, index: number) => (
+                        {/* {!isLatestProject && project && project.categories && project.categories?.map((category: iCategory, index: number) => (
                             <div key={index} className="pr-2 lg:pr-4 pt-2">
                                 <button className="cursor-default whitespace-nowrap border border-gray bg-gray text-white rounded-full py-2 px-6 lg:py-2 lg:px-8 text-xs md:text-sm">{locale === "en" ? category.categoryname : category.categoryname_no}</button>
                             </div>
-                        ))}
+                        ))} */}
                     </div>
                 </div>
                 <div className="w-[80%] lg:w-2/3 -order-1 lg:order-1">

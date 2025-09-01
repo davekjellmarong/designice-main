@@ -24,9 +24,7 @@ export default defineType({
       name: 'links',
       type: 'array',
       weak: true,
-      of: [
-        { type: 'linkInternal' },
-      ]
+      of: [{ type: 'linkInternal' }, { type: 'linkExternal' }],
     },
   ],
 })

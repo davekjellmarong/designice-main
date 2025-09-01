@@ -13,6 +13,10 @@ export const cta = groq`
             title,
             ...reference->{
                   "slug": slug.current               
+            },
+            _type == "linkExternal" => {
+                title,
+                url
             }
         }
     }

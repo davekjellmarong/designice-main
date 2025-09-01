@@ -144,7 +144,7 @@ export interface PageNotFound {}
 
 export interface iProject extends iPage {
   ingress?: string
-  mainImage?: iPicture,
+  mainImage?: iPicture
   categories?: iCategory[]
 }
 export interface iService extends iPage {
@@ -192,7 +192,7 @@ export interface iCta {
   _type: string
   title?: string
   picture: iPicture
-  links: iLinkInternal[]
+  links: (iLinkInternal | iLinkExternal)[]
 }
 
 export interface iFullwidthImage {

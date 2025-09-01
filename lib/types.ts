@@ -192,7 +192,7 @@ export interface iCta {
   _type: string
   title?: string
   picture: iPicture
-  links: (iLinkInternal | iLinkExternal)[]
+  links: iLinkExternal[] | iLinkInternal[]
 }
 
 export interface iFullwidthImage {

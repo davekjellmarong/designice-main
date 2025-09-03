@@ -12,13 +12,13 @@ export default function ModuleBuilder({ page }: { page: iPage }) {
   const ServicesListing = dynamic(() => import('../modules/ServicesListing'))
   const Cta = dynamic(() => import('../modules/Cta'))
   const FullwidthImage = dynamic(() => import('../modules/FullwidthImage'))
+  const Button = dynamic(() => import('../modules/Button'))
 
   return (
     <>
       {page.modules?.map((module: iPage['modules'], index: number) => {
-        
         const { _type, _key } = module
-        
+
         switch (_type) {
           case 'textblock':
             return <Textblock key={_key | index} {...module} />
@@ -40,6 +40,8 @@ export default function ModuleBuilder({ page }: { page: iPage }) {
             return <Cta key={_key | index} {...module} />
           case 'fullwidthImage':
             return <FullwidthImage key={_key | index} {...module} />
+          case 'button':
+            return <Button key={_key | index} {...module} />
           default:
             return null
         }

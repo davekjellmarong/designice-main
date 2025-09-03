@@ -9,6 +9,7 @@ import { servicesListing } from './servicesListing'
 import { cta } from './cta'
 import { fullwidthImage } from './fullwidthImage'
 import { videohero } from './videohero'
+import { button } from './button'
 
 export const modulesQuery = groq`
 ${textblock},
@@ -21,4 +22,5 @@ ${projectsListing},
 ${servicesListing},
 ${fullwidthImage},
 ${cta},
+${button},
 `

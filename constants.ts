@@ -11,4 +11,5 @@ export const STANDARD_MODULES = [
   { type: 'servicesListing' },
   { type: 'cta' },
   { type: 'fullwidthImage' },
+  { type: 'button' },
 ]

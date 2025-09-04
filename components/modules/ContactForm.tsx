@@ -5,8 +5,8 @@ export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
 
   return (
-    <section className="bg-white py-12 md:py-20">
-      <Container className="mx-auto max-w-lg">
+    <section className="bg-white py-8 md:py-12">
+      <Container className="mx-auto max-w-[700px]">
         <div className="mb-8 text-center">
           <h2 className="mb-2 text-3xl font-bold md:text-4xl">Contact Us</h2>
           <p className="text-gray-600 md:text-lg">
@@ -18,7 +18,7 @@ export default function ContactForm() {
           name="contact"
           method="POST"
           data-netlify="true"
-          className="flex flex-col gap-6 rounded-xl bg-white p-8 shadow-lg"
+          className="flex flex-col gap-8 rounded-xl bg-white p-10 border border-gray-100"
           onSubmit={() => setSubmitted(true)}
         >
           <input type="hidden" name="form-name" value="contact" />
@@ -34,7 +34,21 @@ export default function ContactForm() {
               id="name"
               name="name"
               required
-              className="border-gray-300 w-full rounded-md border px-4 py-2 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="border-gray-300 w-full rounded-lg border px-5 py-3 text-base transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="company"
+              className="text-gray-700 mb-1 block text-sm font-medium"
+            >
+              Company Name
+            </label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              className="border-gray-300 w-full rounded-lg border px-5 py-3 text-base transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
             />
           </div>
           <div>
@@ -49,7 +63,7 @@ export default function ContactForm() {
               id="email"
               name="email"
               required
-              className="border-gray-300 w-full rounded-md border px-4 py-2 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="border-gray-300 w-full rounded-lg border px-5 py-3 text-base transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
             />
           </div>
           <div>
@@ -64,12 +78,12 @@ export default function ContactForm() {
               name="message"
               rows={5}
               required
-              className="border-gray-300 w-full resize-none rounded-md border px-4 py-2 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="border-gray-300 w-full resize-none rounded-lg border px-5 py-3 text-base transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
             />
           </div>
           <button
             type="submit"
-            className="w-full rounded-full bg-blue-600 py-3 text-lg font-semibold text-white shadow transition hover:bg-blue-700"
+            className="w-full rounded-full bg-blue-600 py-3 text-lg font-semibold text-white transition hover:bg-blue-700"
           >
             Send Message
           </button>

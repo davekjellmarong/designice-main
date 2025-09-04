@@ -10,7 +10,7 @@ export default function ContactForm() {
         <div className="mb-8 text-center">
           <h2 className="mb-2 text-3xl font-bold md:text-4xl">Contact Us</h2>
           <p className="text-gray-600 md:text-lg">
-            We'd love to hear from you. Fill out the form and we'll get back to
+            We love to hear from you. Fill out the form and we ll get back to
             you soon!
           </p>
         </div>

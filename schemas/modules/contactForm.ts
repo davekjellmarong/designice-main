@@ -14,5 +14,5 @@ export default defineType({
       hidden: true,
       initialValue: 'contactForm',
     },
-  ]
+  ],
 })

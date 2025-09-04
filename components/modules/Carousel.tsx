@@ -12,7 +12,7 @@ export default function Carousel(module: iCarousel) {
 
   return (
     <section className="carousel swiper-container">
-      <div className="ml-4 mt-8 mb-6 pr-8 sm:ml-[68px] md:mt-20 md:mb-12 lg:ml-[20vw] xl:mt-32 xl:mb-16">
+      <div className="mx-auto mt-8 mb-6 max-w-[940px] pr-8 text-left">
         <Swiper
           modules={[Navigation, Pagination]}
           navigation

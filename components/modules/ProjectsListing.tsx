@@ -71,8 +71,8 @@ export default function ProjectsListing(module: iProjectsListing) {
   return (
     <section className="py-10 md:py-16">
       <Container>
-        <div className="mx-auto max-w-5xl">
-          <h2 className="mb-8 text-center text-2xl font-bold md:text-4xl">
+        <div className="mx-auto max-w-[940px] text-left">
+          <h2 className="mb-8 text-left text-2xl font-bold md:text-4xl">
             {title}
           </h2>
           {!isLatestProject && (
@@ -137,7 +137,7 @@ export default function ProjectsListing(module: iProjectsListing) {
               <a
                 key={project._id}
                 href={`/projects/${project.slug}`}
-                className="hover:bg-gray-50 focus:bg-gray-100 flex cursor-pointer flex-col items-center rounded-xl bg-white p-6 transition"
+                className="hover:bg-gray-50 focus:bg-gray-100 flex cursor-pointer flex-col items-center rounded-xl bg-white  transition"
                 style={{ textDecoration: 'none' }}
               >
                 {project.mainImage && (
@@ -149,11 +149,11 @@ export default function ProjectsListing(module: iProjectsListing) {
                     className="mb-4 h-80 w-full max-w-lg rounded-lg object-cover"
                   />
                 )}
-                <h3 className="mb-2 text-center text-xl font-bold md:text-2xl">
+                <h3 className="mb-2 w-full text-left text-xl font-bold md:text-2xl">
                   {project.title}
                 </h3>
                 {project.ingress && (
-                  <p className="text-gray-600 mb-2 text-center text-base md:text-lg">
+                  <p className="text-gray-600 mb-2 w-full text-left text-base md:text-lg">
                     {project.ingress}
                   </p>
                 )}

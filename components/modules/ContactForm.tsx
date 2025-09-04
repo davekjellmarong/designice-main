@@ -18,7 +18,7 @@ export default function ContactForm() {
           name="contact"
           method="POST"
           data-netlify="true"
-          className="border-gray-100 flex flex-col gap-8 rounded-xl border bg-white p-10"
+          className="flex flex-col gap-8 rounded-xl bg-white p-10"
           onSubmit={() => setSubmitted(true)}
         >
           <input type="hidden" name="form-name" value="contact" />

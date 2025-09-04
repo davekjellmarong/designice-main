@@ -12,7 +12,13 @@ export default function Cta(module: iCta) {
     <section className="bg-black py-24 md:py-48">
       <div className="relative mx-auto w-[90%] sm:w-[62%]">
         <motion.div className="invisible absolute top-32 right-[3%] w-[25%] overflow-hidden rounded-full md:visible">
-          <Picture picture={picture} width={899} height={899} alt={title} />
+          <Picture
+            picture={picture}
+            width={400}
+            height={400}
+            alt={title}
+            className="h-auto max-w-xs rounded-full object-cover md:max-w-sm"
+          />
         </motion.div>
         <div className="z-4 text-videohero font-bold tracking-[0.56px] text-white mix-blend-exclusion">
           {title}

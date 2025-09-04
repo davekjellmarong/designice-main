@@ -10,6 +10,7 @@ import { cta } from './cta'
 import { fullwidthImage } from './fullwidthImage'
 import { videohero } from './videohero'
 import { button } from './button'
+import { contactForm } from './contactForm'
 
 export const modulesQuery = groq`
 ${textblock},
@@ -23,4 +24,5 @@ ${servicesListing},
 ${fullwidthImage},
 ${cta},
 ${button},
+${contactForm},
 `

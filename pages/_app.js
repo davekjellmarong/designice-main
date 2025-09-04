@@ -1,10 +1,11 @@
 import '../styles/global.css'
+import '../styles/swiper-custom.css'
 import { GoogleTagManager } from '@next/third-parties/google'
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-    <GoogleTagManager gtmId="G-H2B7Y4MCWF" />
+      <GoogleTagManager gtmId="G-H2B7Y4MCWF" />
       <Component {...pageProps} />
     </>
   )

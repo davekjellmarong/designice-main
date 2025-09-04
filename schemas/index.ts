@@ -25,6 +25,7 @@ import linkInternal from './objects/linkInternal'
 import seo from './objects/seo'
 import videohero from './modules/videohero'
 import button from './modules/button'
+import contactForm from './modules/contactForm'
 
 // If a document is a singleton, add it to this array
 export const SINGLETONS_DOCUMENTS: DocumentDefinition[] = [
@@ -87,4 +88,5 @@ export const schemaTypes = [
   cta,
   fullwidthImage,
   button,
+  contactForm,
 ]

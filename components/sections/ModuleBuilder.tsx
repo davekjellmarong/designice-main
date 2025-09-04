@@ -13,6 +13,7 @@ export default function ModuleBuilder({ page }: { page: iPage }) {
   const Cta = dynamic(() => import('../modules/Cta'))
   const FullwidthImage = dynamic(() => import('../modules/FullwidthImage'))
   const Button = dynamic(() => import('../modules/Button'))
+  const ContactForm = dynamic(() => import('../modules/ContactForm'))
 
   return (
     <>
@@ -42,6 +43,8 @@ export default function ModuleBuilder({ page }: { page: iPage }) {
             return <FullwidthImage key={_key | index} {...module} />
           case 'button':
             return <Button key={_key | index} {...module} />
+          case 'contactForm':
+            return <ContactForm key={_key | index} {...module} />
           default:
             return null
         }

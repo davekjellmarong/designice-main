@@ -5,13 +5,13 @@ export default function Header(module: iHeader) {
   const { _type, title, ingress } = module
 
   return (
-    <section className="header">
+    <section className="py-10 md:py-16">
       <Container>
-        <div className="my-6 md:my-12">
-          <h1 className="text-4xl md:text-7xl leading-tight md:leading-extratight my-4 whitespace-pre-line font-bold">
+        <div className="mx-auto max-w-3xl text-center">
+          <h1 className="mb-4 whitespace-pre-line text-3xl font-bold md:text-5xl">
             {title}
           </h1>
-          <p className="text-xl md:text-3xl ">{ingress}</p>
+          <p className="text-gray-700 text-lg md:text-2xl">{ingress}</p>
         </div>
       </Container>
     </section>

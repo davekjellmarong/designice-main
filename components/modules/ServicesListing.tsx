@@ -16,11 +16,13 @@ export default function ServicesListing(module: iServicesListing) {
   return (
     <section className="mb-8 lg:mb-16">
       <Container className="max-w-[940px]">
-        <h1 className="my-4 whitespace-pre-line text-[34px] font-bold leading-tight md:text-[70px] md:leading-extratight">
+        <h1 className="my-4 whitespace-pre-line text-left text-2xl font-bold leading-tight md:text-4xl md:leading-tight">
           {title}
         </h1>
-        <p className="text-[15px] md:text-[28px]">{ingress}</p>
-        <div className="mt-[30px] grid grid-cols-2 gap-x-3 gap-y-8 md:mt-[55px] md:grid-cols-3 md:gap-x-4">
+        <p className="text-gray-700 mb-2 text-left text-base md:text-xl">
+          {ingress}
+        </p>
+        <div className="mt-[30px] grid grid-cols-1 gap-x-3 gap-y-8 sm:grid-cols-2 md:mt-[55px] md:grid-cols-3 md:gap-x-4">
           {services?.map((service) => (
             <Link
               className="group"
@@ -28,7 +30,7 @@ export default function ServicesListing(module: iServicesListing) {
               href={`${servicesLink}/${service.slug}`}
             >
               <div>
-                <span className="text-[10.5px] font-bold sm:text-base md:text-lg">
+                <span className="text-sm font-semibold md:text-lg">
                   {service.title}
                 </span>
                 <div className="mt-[5px] group-hover:opacity-70 lg:mt-[15px]">
@@ -44,7 +46,7 @@ export default function ServicesListing(module: iServicesListing) {
             </Link>
           ))}
         </div>
-        <div className="mt-16 text-[15px] leading-normal md:text-lg">
+        <div className="mt-16 text-left text-base leading-normal md:text-lg">
           <PortableText value={body} components={portableTextComponents} />
         </div>
       </Container>

@@ -12,4 +12,5 @@ export const STANDARD_MODULES = [
   { type: 'cta' },
   { type: 'fullwidthImage' },
   { type: 'button' },
+  { type: 'contactForm' },
 ]

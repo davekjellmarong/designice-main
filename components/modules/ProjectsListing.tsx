@@ -73,14 +73,14 @@ export default function ProjectsListing(module: iProjectsListing) {
     <section className="py-10 md:py-16">
       <Container>
         <div className="mx-auto max-w-[940px] text-left">
-          <h2 className="mb-8 text-left text-2xl font-bold md:text-4xl">
+          {/* <h2 className="mb-8 text-left text-2xl font-bold md:text-4xl">
             {title}
-          </h2>
+          </h2> */}
           {!isLatestProject && (
             <a
               id="referenceId"
               href="#referenceId"
-              className="mb-8 flex flex-row items-center justify-center"
+              className="mb-8 flex flex-row items-center"
             >
               <MdArrowDownward className="mr-4 text-2xl" />
               <span className="text-lg font-medium">{linkToProjectsLabel}</span>

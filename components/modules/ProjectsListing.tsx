@@ -7,6 +7,7 @@ import { MdArrowDownward } from 'react-icons/md'
 import cx from 'classnames'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function ProjectsListing(module: iProjectsListing) {
   const { _type, title, projects, projectsCount, categories } = module
@@ -134,7 +135,7 @@ export default function ProjectsListing(module: iProjectsListing) {
           )}
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
             {filteredProjects.map((project) => (
-              <a
+              <Link
                 key={project._id}
                 href={`/projects/${project.slug}`}
                 className="hover:bg-gray-50 focus:bg-gray-100 flex cursor-pointer flex-col items-center rounded-xl bg-white  transition"
@@ -157,7 +158,7 @@ export default function ProjectsListing(module: iProjectsListing) {
                     {project.ingress}
                   </p>
                 )}
-              </a>
+              </Link>
             ))}
           </div>
           {projects?.length > filteredProjects?.length && !isLatestProject && (

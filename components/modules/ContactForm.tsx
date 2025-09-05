@@ -1,18 +1,42 @@
 import Container from 'components/parts/Container'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
+  const { locale } = useRouter()
+  const labels = {
+    en: {
+      contactUs: 'Contact Us',
+      description:
+        "We'd love to hear from you. Fill out the form and we'll get back to you soon!",
+      name: 'Name',
+      company: 'Company Name',
+      email: 'Email',
+      message: 'Message',
+      send: 'Send Message',
+      thankYou: 'Thank you! Your message has been sent.',
+    },
+    no: {
+      contactUs: 'Kontakt oss',
+      description:
+        'Vi vil gjerne høre fra deg. Fyll ut skjemaet, så tar vi kontakt så snart som mulig!',
+      name: 'Navn',
+      company: 'Firmanavn',
+      email: 'E-post',
+      message: 'Melding',
+      send: 'Send melding',
+      thankYou: 'Takk! Din melding er sendt.',
+    },
+  }
+  const t = labels[locale as keyof typeof labels] || labels.en
 
   return (
     <section className="bg-white py-8 md:py-12">
       <Container className="mx-auto max-w-[700px]">
         <div className="mb-8 text-center">
-          <h2 className="mb-2 text-3xl font-bold md:text-4xl">Contact Us</h2>
-          <p className="text-gray-600 md:text-lg">
-            We love to hear from you. Fill out the form and we ll get back to
-            you soon!
-          </p>
+          <h2 className="mb-2 text-3xl font-bold md:text-4xl">{t.contactUs}</h2>
+          <p className="text-gray-600 md:text-lg">{t.description}</p>
         </div>
         <form
           name="contact"
@@ -27,7 +51,7 @@ export default function ContactForm() {
               htmlFor="name"
               className="text-gray-700 mb-1 block text-sm font-medium"
             >
-              Name
+              {t.name}
             </label>
             <input
               type="text"
@@ -42,7 +66,7 @@ export default function ContactForm() {
               htmlFor="company"
               className="text-gray-700 mb-1 block text-sm font-medium"
             >
-              Company Name
+              {t.company}
             </label>
             <input
               type="text"
@@ -56,7 +80,7 @@ export default function ContactForm() {
               htmlFor="email"
               className="text-gray-700 mb-1 block text-sm font-medium"
             >
-              Email
+              {t.email}
             </label>
             <input
               type="email"
@@ -71,7 +95,7 @@ export default function ContactForm() {
               htmlFor="message"
               className="text-gray-700 mb-1 block text-sm font-medium"
             >
-              Message
+              {t.message}
             </label>
             <textarea
               id="message"
@@ -85,11 +109,11 @@ export default function ContactForm() {
             type="submit"
             className="w-full rounded-full bg-blue-600 py-3 text-lg font-semibold text-white transition hover:bg-blue-700"
           >
-            Send Message
+            {t.send}
           </button>
           {submitted && (
             <div className="mt-4 text-center font-medium text-green-600">
-              Thank you! Your message has been sent.
+              {t.thankYou}
             </div>
           )}
         </form>

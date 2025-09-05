@@ -12,7 +12,7 @@ export default function Carousel(module: iCarousel) {
 
   return (
     <section className="carousel swiper-container">
-      <div className="mx-auto mt-8 mb-6 max-w-[940px] pr-8 text-left">
+      <div className="mx-auto mt-8 mb-6 max-w-[940px] px-4 text-left sm:pr-8 sm:pl-0">
         <Swiper
           modules={[Navigation, Pagination]}
           navigation
@@ -22,25 +22,26 @@ export default function Carousel(module: iCarousel) {
           className="relative"
         >
           {images?.map((image: iPicture) => {
-            const aspectRatio = getImageWidth(image) / getImageHeight(image)
             const url = urlForImage(image)
               .height(400)
-              .width(Math.floor(400 * aspectRatio))
+              .width(600)
               .quality(100)
               .url()
 
             return (
               <SwiperSlide key={image.asset.assetId}>
-                <Image
-                  src={url}
-                  quality={100}
-                  alt={image.alt || 'carousel image'}
-                  placeholder="blur"
-                  blurDataURL={image.asset.metadata.lqip}
-                  height={400}
-                  width={Math.floor(400 * aspectRatio)}
-                  className="mx-auto max-w-xs object-cover transition-all duration-1000 md:max-w-sm"
-                />
+                <div className="flex h-[400px] w-full items-center justify-center">
+                  <Image
+                    src={url}
+                    quality={100}
+                    alt={image.alt || 'carousel image'}
+                    placeholder="blur"
+                    blurDataURL={image.asset.metadata.lqip}
+                    height={400}
+                    width={600}
+                    className="h-full w-full rounded-lg object-cover transition-all duration-1000"
+                  />
+                </div>
               </SwiperSlide>
             )
           })}

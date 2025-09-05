@@ -137,7 +137,7 @@ export default function ProjectsListing(module: iProjectsListing) {
             {filteredProjects.map((project) => (
               <Link
                 key={project._id}
-                href={`/projects/${project.slug}`}
+                href={`projects/${project.slug}`}
                 className="hover:bg-gray-50 focus:bg-gray-100 flex cursor-pointer flex-col items-center rounded-xl bg-white  transition"
                 style={{ textDecoration: 'none' }}
               >

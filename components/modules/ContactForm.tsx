@@ -4,7 +4,39 @@ import { useRouter } from 'next/router'
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
   const { locale } = useRouter()
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setLoading(true)
+
+    const formData = new FormData(e.currentTarget)
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          company: formData.get('company'),
+          email: formData.get('email'),
+          message: formData.get('message'),
+        }),
+      })
+
+      if (response.ok) {
+        setSubmitted(true)
+      } else {
+        throw new Error('Network response was not ok')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   const labels = {
     en: {
       contactUs: 'Contact Us',
@@ -43,7 +75,7 @@ export default function ContactForm() {
           method="POST"
           data-netlify="true"
           className="flex flex-col gap-8 rounded-xl bg-white p-10"
-          onSubmit={() => setSubmitted(true)}
+          onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
           <div>
@@ -107,9 +139,10 @@ export default function ContactForm() {
           </div>
           <button
             type="submit"
-            className="w-full rounded-full bg-black py-3 text-lg font-semibold text-white transition"
+            disabled={loading}
+            className="hover:bg-gray-800 w-full rounded-full bg-black py-3 text-lg font-semibold text-white transition disabled:opacity-50"
           >
-            {t.send}
+            {loading ? (locale === 'en' ? 'Sending...' : 'Sender...') : t.send}
           </button>
           {submitted && (
             <div className="mt-4 text-center font-medium text-green-600">

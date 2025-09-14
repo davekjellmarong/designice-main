@@ -5,13 +5,13 @@ export default function Cta(module: iFullwidthImage) {
   const { _type, title, picture } = module
 
   return (
-    <section className="bg-black">
+    <section className="flex justify-center bg-black py-8">
       <Picture
         picture={picture}
-        width={1920}
-        height={1080}
+        width={1200}
+        height={675}
         alt={title}
-        className='w-full h-auto'
+        className="h-auto w-full max-w-4xl rounded-lg object-cover shadow"
       />
     </section>
   )

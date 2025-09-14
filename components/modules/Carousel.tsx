@@ -1,8 +1,10 @@
 import Picture from 'components/parts/Picture'
 import { iCarousel, iPicture } from 'lib/types'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination } from 'swiper'
 import Image from 'next/image'
 import 'swiper/css'
+import 'swiper/css/pagination'
 import { getImageHeight, getImageWidth, urlForImage } from 'lib/sanity.image'
 
 export default function Carousel(module: iCarousel) {
@@ -10,30 +12,36 @@ export default function Carousel(module: iCarousel) {
 
   return (
     <section className="carousel swiper-container">
-      <div className="ml-4 sm:ml-[68px] lg:ml-[20vw] mt-8 mb-6 md:mt-20 md:mb-12 xl:mt-32 xl:mb-16">
+      <div className="mx-auto mt-8 mb-6 max-w-[940px] px-4 text-left sm:pr-8 sm:pl-0">
         <Swiper
-          spaceBetween={12}
+          modules={[Navigation, Pagination]}
+          navigation
+          pagination={{ clickable: true }}
+          spaceBetween={24}
           slidesPerView={'auto'}
-          onSwiper={(swiper) => {
-            swiper.init()
-          }}
+          className="relative"
         >
           {images?.map((image: iPicture) => {
-            const aspectRatio = getImageWidth(image) / getImageHeight(image)
-            const url = urlForImage(image).height(400).width(Math.floor(400 * aspectRatio)).quality(100).url()
+            const url = urlForImage(image)
+              .height(400)
+              .width(600)
+              .quality(100)
+              .url()
 
             return (
               <SwiperSlide key={image.asset.assetId}>
-                <Image 
-                  src={url}
-                  quality={100}
-                  alt={image.alt || "carousel image"}
-                  placeholder="blur"
-                  blurDataURL={image.asset.metadata.lqip}
-                  height={400}
-                  width={Math.floor((400 * aspectRatio))}
-                  className="transition-all duration-1000 object-cover"
-                />
+                <div className="flex h-[400px] w-full items-center justify-center">
+                  <Image
+                    src={url}
+                    quality={100}
+                    alt={image.alt || 'carousel image'}
+                    placeholder="blur"
+                    blurDataURL={image.asset.metadata.lqip}
+                    height={400}
+                    width={600}
+                    className="h-full w-full rounded-lg object-cover transition-all duration-1000"
+                  />
+                </div>
               </SwiperSlide>
             )
           })}

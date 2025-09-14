@@ -1,17 +1,15 @@
-import { iHeader } from 'lib/types'
+import { Header as HeaderComponent } from 'components/Common/Header'
 import Container from 'components/parts/Container'
+import { iHeader } from 'lib/types'
 
 export default function Header(module: iHeader) {
   const { _type, title, ingress } = module
 
   return (
-    <section className="header">
+    <section className="py-3 md:py-6">
       <Container>
-        <div className="my-6 md:my-12">
-          <h1 className="text-4xl md:text-7xl leading-tight md:leading-extratight my-4 whitespace-pre-line font-bold">
-            {title}
-          </h1>
-          <p className="text-xl md:text-3xl ">{ingress}</p>
+        <div className="mx-auto max-w-[940px] text-left">
+          <HeaderComponent title={title} ingress={ingress} />
         </div>
       </Container>
     </section>

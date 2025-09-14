@@ -10,7 +10,7 @@ export default function Cta(module: iCta) {
   const { scrollY } = useScroll()
   return (
     <section className="bg-black py-24 md:py-48">
-      <div className="relative mx-auto w-[90%] sm:w-[62%]">
+     <div className="relative mx-auto w-[90%] sm:w-[62%]">
         <motion.div className="invisible absolute top-32 right-[3%] w-[25%] overflow-hidden rounded-full md:visible">
           <Picture picture={picture} width={899} height={899} alt={title} />
         </motion.div>

@@ -24,6 +24,8 @@ import linkGroup from './objects/linkGroup'
 import linkInternal from './objects/linkInternal'
 import seo from './objects/seo'
 import videohero from './modules/videohero'
+import button from './modules/button'
+import contactForm from './modules/contactForm'
 
 // If a document is a singleton, add it to this array
 export const SINGLETONS_DOCUMENTS: DocumentDefinition[] = [
@@ -34,7 +36,12 @@ export const SINGLETONS_DOCUMENTS: DocumentDefinition[] = [
 ]
 
 // If you want a preview pane for a document type, add it to this array
-export const PREVIEW_DOCUMENT_TYPES: DocumentDefinition[] = [home, page, project, service]
+export const PREVIEW_DOCUMENT_TYPES: DocumentDefinition[] = [
+  home,
+  page,
+  project,
+  service,
+]
 
 // If you add document types to desk structure manually, you can add them to this array to prevent duplicates in the root pane
 export const DOCUMENT_TYPES_IN_STRUCTURE = [
@@ -80,4 +87,6 @@ export const schemaTypes = [
   servicesListing,
   cta,
   fullwidthImage,
+  button,
+  contactForm,
 ]

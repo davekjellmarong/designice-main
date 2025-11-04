@@ -24,7 +24,7 @@ export default async function handler(
       const resend = new Resend(process.env.RESEND_API_KEY)
 
       await resend.emails.send({
-        from: 'onboarding@resend.dev', // You can change this to your verified domain later
+        from: 'onboarding@resend.dev', 
         to: process.env.CONTACT_EMAIL || 'your-email@example.com', // Use environment variable
         subject: `Ny henvendelse fra kontaktskjema - ${name}`,
         html: `

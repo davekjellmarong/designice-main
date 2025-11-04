@@ -10,7 +10,7 @@ export default async function handler(
   }
 
   try {
-    const { name, company, email, message } = req.body
+    const { name, company, email, phone, message } = req.body
 
     // Basic validation
     if (!name || !email || !message) {
@@ -32,6 +32,7 @@ export default async function handler(
           <p><strong>Navn:</strong> ${name}</p>
           ${company ? `<p><strong>Firma:</strong> ${company}</p>` : ''}
           <p><strong>E-post:</strong> ${email}</p>
+          ${phone ? `<p><strong>Telefon:</strong> ${phone}</p>` : ''}
           <p><strong>Melding:</strong></p>
           <p>${message.replace(/\n/g, '<br>')}</p>
           <hr>

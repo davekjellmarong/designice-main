@@ -21,6 +21,7 @@ export default function ContactForm() {
           name: formData.get('name'),
           company: formData.get('company'),
           email: formData.get('email'),
+          phone: formData.get('phone'),
           message: formData.get('message'),
         }),
       })
@@ -45,6 +46,7 @@ export default function ContactForm() {
       name: 'Name',
       company: 'Company Name',
       email: 'Email',
+      phone: 'Phone Number',
       message: 'Message',
       send: 'Send Message',
       thankYou: 'Thank you! Your message has been sent.',
@@ -56,6 +58,7 @@ export default function ContactForm() {
       name: 'Navn',
       company: 'Firmanavn',
       email: 'E-post',
+      phone: 'Telefonnummer',
       message: 'Melding',
       send: 'Send melding',
       thankYou: 'Takk! Din melding er sendt.',
@@ -119,6 +122,20 @@ export default function ContactForm() {
               id="email"
               name="email"
               required
+              className="border-gray-300 w-full rounded-lg border px-5 py-3 text-base transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="phone"
+              className="text-gray-700 mb-1 block text-sm font-medium"
+            >
+              {t.phone}
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
               className="border-gray-300 w-full rounded-lg border px-5 py-3 text-base transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
             />
           </div>
